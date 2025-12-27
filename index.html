@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokoro Tomita | Researcher</title>
+    <style>
+        /* --- 1. Color Palette & Typography (The Permeable Assemblage) --- */
+        :root {
+            --bg-color: #FAFAF8;       /* 生成り色 (Washi-like paper) */
+            --text-color: #333333;     /* チャコールグレー (Soft black) */
+            --accent-color: #C17F74;   /* テラコッタ (Brittle paper/Pottery) */
+            --secondary-color: #8DA399;/* セージグリーン (Dried plant) */
+            --line-color: #E0E0E0;     /* 薄い境界線 */
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            letter-spacing: 0.04em;
+        }
+
+        h1, h2, h3 {
+            font-family: "Garamond", "Times New Roman", "YuMincho", serif; /* 知的なセリフ体 */
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            border-bottom-color: transparent;
+        }
+
+        /* --- 2. Layout --- */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 6rem 0 4rem; /* 大きな余白 */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        header .subtitle {
+            font-size: 1rem;
+            color: #666;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        nav a {
+            margin: 0 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border-bottom: none;
+            color: #888;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* --- 3. Content Styling --- */
+        .bio-text {
+            font-size: 1.05rem;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card {
+            margin-bottom: 3rem;
+        }
+
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            display: inline-block;
+            border-bottom: none;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 999px;
+            border: 1px solid var(--line-color);
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .tag.lit {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .tag.tech {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* CV section */
+        #cv {
+            border-top: 1px solid var(--line-color);
+            padding-top: 3rem;
+        }
+
+        .cv-item {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+
+        .cv-year {
+            min-width: 140px;
+            font-size: 0.9rem;
+            color: #888;
+            padding-right: 1rem;
+        }
+
+        .cv-detail {
+            flex: 1;
+        }
+
+        .cv-role {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .cv-org {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .cv-desc {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #aaa;
+            padding-top: 4rem;
+            border-top: 1px solid var(--line-color);
+        }
+
+        /* Profile image */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            filter: grayscale(20%) sepia(10%);
+            border: 1px solid var(--accent-color);
+            padding: 4px;
+        }
+
+        .tagline {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Mobile Adjustment */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .cv-item { flex-direction: column; }
+            .cv-year { margin-bottom: 0.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <img src="profile.jpg" alt="Portrait of Kokoro Tomita" class="profile-img">
+        
+        <h1>Kokoro Tomita</h1>
+        <div class="subtitle">Researcher / Writer from Japan based in Taipei</div>
+        <div class="tagline">Narrative assemblage, opacity, and care—across fiction, film, and AI.</div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <div class="section-title">About</div>
+
+        <p class="bio-text">
+            I’m a literary scholar and emerging comparatist whose research examines narrative ethics and non-normative articulation across modern and contemporary fiction. I am currently completing an MA in Foreign Languages and Literatures at National Taiwan University, where my thesis analyzes strategic opacity and dividual narration in Rachel Cusk’s <i>Outline</i> trilogy.
+        </p>
+
+        <p class="bio-text">
+            My work brings new materialist theory (Karen Barad, Jane Bennett) into conversation with narrative theory (Paul Ricoeur, Gérard Genette) to theorize what I call “narrative assemblage”—literary forms that relocate agency from confessing subjects to dividual narrators who curate residues, opacities, and material fragments. My developing PhD project, <i>After Confession</i>, traces this strategy from Natsume Sōseki’s <i>Kokoro</i> (1914) through Kazuo Ishiguro’s <i>Never Let Me Go</i> (2005), Ruth Ozeki’s <i>A Tale for the Time Being</i> (2013), and Rachel Cusk’s <i>Outline</i> trilogy (2014–2018).
+        </p>
+
+        <p class="bio-text">
+            I hold a BA from Waseda University (School of International Liberal Studies, 2023), and I have work published or under review in <i>Narrative</i>, <i>AI &amp; Society</i>, and other venues. My broader interests include modernist and contemporary fiction, feminist and queer theory, trauma studies, new materialisms, and critical AI ethics.
+        </p>
+
+        <p class="bio-text">
+            I am currently completing my MA at National Taiwan University and will be applying for PhD programs in Fall 2025. I welcome inquiries about my research, potential collaborations, or speaking opportunities. Please feel free to reach out via email at <a href="mailto:r11122017@ntu.edu.tw">r11122017@ntu.edu.tw</a>.
+        </p>
+    </section>
+
+    <section id="research">
+        <div class="section-title">Selected Research</div>
+
+        <!-- Cusk / MA thesis -->
+        <div class="project-card">
+            <span class="tag lit">Narrative Theory</span>
+            <span class="tag lit">Trauma &amp; Ethics</span>
+            <a href="#" class="project-title">
+                Vibrant Silence: Narrative Agency and Assemblage in Rachel Cusk’s <i>Outline</i>
+            </a>
+            <span class="project-meta">MA Thesis | National Taiwan University | 2024–2025</span>
+            <p>
+                My master’s thesis reads Cusk’s <i>Outline</i> as a study of “narrative assemblage,” in which Faye’s dividual narration curates other people’s stories, places, and objects while maintaining strategic opacity. Combining Jane Bennett’s vital materialism with narrative theory, the project argues that <i>Outline</i> resists contemporary therapeutic and neoliberal demands for confessional transparency and rethinks what counts as narrative agency.
+            </p>
+        </div>
+
+        <!-- Kokoro article -->
+        <div class="project-card">
+            <span class="tag lit">Modern Japanese Fiction</span>
+            <span class="tag lit">Narrative Ethics</span>
+            <a href="#" class="project-title">
+                After the Letter: Narrative Agency and the Ethics of Re-Assembly in Natsume Sōseki’s <i>Kokoro</i>
+            </a>
+            <span class="project-meta">Article manuscript | 2025</span>
+            <p>
+                This article rereads <i>Kokoro</i> as an early scene of confessional crisis in Japanese modernity. Rather than treating Sensei’s letter as a belatedly coherent self-explanation, it argues that the failure of emplotment exposes confession itself as a form of violence. The essay theorizes watashi’s later handling of the letter, seasonal atmospheres, and architectural spaces as an ethics of re-assembly: living with another’s residue without forcing closure.
+            </p>
+        </div>
+
+        <!-- PoALOF article -->
+        <div class="project-card">
+            <span class="tag lit">Film &amp; Visuality</span>
+            <span class="tag lit">Queer Theory</span>
+            <a href="#" class="project-title">
+                Beyond the Female Gaze: Intra-active Queer Optics in Sciamma’s <i>Portrait of a Lady on Fire</i>
+            </a>
+            <span class="project-meta">Article under review | 2025</span>
+            <p>
+                This essay reframes <i>Portrait of a Lady on Fire</i> not simply as a manifesto of the “female gaze” but as a study of how looking is materially arranged. Drawing on Karen Barad’s agential realism, it argues that the film exposes the gaze as an apparatus that produces “painter” and “model” through intra-action rather than mediating between pre-existing subjects, and develops a queer optic in which bodies, canvases, light, and sound co-compose desire.
+            </p>
+        </div>
+
+        <!-- AI & Society paper -->
+        <div class="project-card">
+            <span class="tag tech">AI Ethics</span>
+            <span class="tag tech">Labor</span>
+            <a href="https://philarchive.org/rec/TOMCAI" target="_blank" class="project-title">
+                Compulsory Autonomy in AI: Unmasking Hidden Labor Through Queer Feminist Theory
+            </a>
+            <span class="project-meta">Forthcoming in <i>AI &amp; Society</i> </span>
+            <p>
+                This article critiques the cultural metaphor of “autonomous AI” by foregrounding the human and more-than-human labor that makes AI systems appear self-sufficient. Drawing on queer feminist theories of compulsory sexuality and able-bodiedness, along with scholarship on ghost work and data labor, it develops the concept of “compulsory autonomy” to describe a regime that demands performances of independence while obscuring dependency, vulnerability, and ongoing exploitation.
+            </p>
+        </div>
+    </section>
+
+    <section id="cv">
+        <div class="section-title">Community Engagement & Experience</div>
+        
+        <div class="cv-item">
+            <div class="cv-year">2022 - Present</div>
+            <div class="cv-detail">
+                <span class="cv-role">Multilingual Communications & Wellness Support</span>
+                <span class="cv-org">Pride House Tokyo</span>
+                <div class="cv-desc">
+                    Designed and delivered allyship training and multilingual support for LGBTQ+ visitors, while co-organizing community events to help participants connect and feel seen.
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-year">2020 - 2022</div>
+            <div class="cv-detail">
+                <span class="cv-role">Student Staff & Event Coordinator</span>
+                <span class="cv-org">Waseda University Gender & Sexuality Center</span>
+                <div class="cv-desc">
+                    Supported program design, outreach, and event facilitation around gender, sexuality, and student wellbeing; helped create safer spaces for marginalized students on campus.
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 4rem;">Education</div>
+
+        <div class="cv-item">
+            <div class="cv-year">2022 - Present</div>
+            <div class="cv-detail">
+                <span class="cv-role">M.A. in Foreign Languages and Literatures</span>
+                <span class="cv-org">National Taiwan University (NTU)</span>
+                <div class="cv-desc">Outstanding International Graduate Student Scholarship</div>
+            </div>
+        </div>
+
+        <div class="cv-item">
+            <div class="cv-year">2018 - 202</div>
+            <div class="cv-detail">
+                <span class="cv-role">B.A. in International Liberal Studies</span>
+                <span class="cv-org">Waseda University</span>
+                <div class="cv-desc">Focus on Sociology, Gender Studies, and English-language literature</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">Contact</div>
+        <p style="text-align: center;">
+            <a href="mailto:r11122017@ntu.edu.tw">Email</a> &nbsp;/&nbsp; 
+            <a href="https://philpeople.org/profiles/kokoro-tomita">PhilPeople</a> &nbsp;/&nbsp; 
+            <a href="#">Medium</a>
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2025 Kokoro Tomita. Designed with Opaque Narrative.
+    </footer>
+
+</div>
+
+</body>
+</html>
